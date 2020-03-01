@@ -592,7 +592,7 @@ class UserService extends AbstractService
 
         $lang = $user->getLanguage();
 
-        if (is_null($lang)) {
+        if ($lang === null) {
             $lang = Keys::DEFAULT_LANGUAGE;
         }
         return $lang;
