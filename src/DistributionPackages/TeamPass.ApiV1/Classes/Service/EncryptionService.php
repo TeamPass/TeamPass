@@ -349,7 +349,7 @@ class EncryptionService extends AbstractService
                 return $result;
             }
         } catch (\Exception $e) {
-            $this->logger->error((string)$e);
+            $this->logger->error((string) $e);
         }
 
         return false;

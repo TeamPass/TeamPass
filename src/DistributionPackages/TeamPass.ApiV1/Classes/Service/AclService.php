@@ -121,7 +121,7 @@ class AclService extends AbstractService
         $this->aclRepository->add($acl);
         $this->persistenceManager->persistAll();
 
-        $result = array (
+        $result = array(
             "groupName" => $acl->getGroup()->getName(),
             "inherited" => $acl->getInherited(),
             "pRead" => $acl->getRead(),

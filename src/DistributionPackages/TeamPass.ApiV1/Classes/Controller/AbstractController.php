@@ -85,7 +85,7 @@ abstract class AbstractController extends RestController
     {
         // throw exception when user is not logged in
         if ($this->session->isStarted() && $this->session->getData("language")) {
-            $lang = (string)$this->session->getData("language");
+            $lang = (string) $this->session->getData("language");
             $this->translatorService->setLocale($lang);
         }
 

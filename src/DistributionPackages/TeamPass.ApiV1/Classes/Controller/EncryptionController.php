@@ -129,7 +129,7 @@ class EncryptionController extends ProtectedController
 
         $result = [
                 'success' => true,
-                'result' => array (
+                'result' => array(
                     'encryptedSessionAesKey' => $clientEncryptSource,
                     'encryptedHandshakeToken' => $encryptedHandshakeToken
                 )
@@ -172,9 +172,9 @@ class EncryptionController extends ProtectedController
             $privateKey = $user->getPrivateKey();
 
             if ($privateKey) {
-                $result = array ("validRsaState" => true, "aesPrivateKey" => $privateKey);
+                $result = array("validRsaState" => true, "aesPrivateKey" => $privateKey);
             } else {
-                $result = array ("validRsaState" => false);
+                $result = array("validRsaState" => false);
             }
             $result = json_encode($result);
 
@@ -182,7 +182,7 @@ class EncryptionController extends ProtectedController
 
             $result = [
                 'success' => true,
-                'result' => array (
+                'result' => array(
                     "privateKey" => $encryptedResult
                 )
             ];

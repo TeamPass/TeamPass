@@ -371,18 +371,18 @@ class DirectoryService extends AbstractService
             if (!isset($compareableArray[$index + 1])) {
                 throw new \Exception("Directory with id '{$directoryId}' is already on last position");
             }
-            $tmp = $compareableArray[$index + 1 ];
-            $compareableArray[$index + 1 ] = $compareableArray[$index];
+            $tmp = $compareableArray[$index + 1];
+            $compareableArray[$index + 1] = $compareableArray[$index];
             $compareableArray[$index] = $tmp;
         }
 
         if ($direction == "up") {
             // check if direcotry is already on last postition
-            if (!isset($compareableArray[$index - 1 ])) {
+            if (!isset($compareableArray[$index - 1])) {
                 throw new \Exception("Directory with id '{$directoryId}' is already on top position");
             }
-            $tmp = $compareableArray[$index - 1 ];
-            $compareableArray[$index - 1 ] = $compareableArray[$index];
+            $tmp = $compareableArray[$index - 1];
+            $compareableArray[$index - 1] = $compareableArray[$index];
             $compareableArray[$index] = $tmp;
         }
 

@@ -10,3 +10,4 @@
 /src/flow.bat
 /.idea
 /src/app/build
+/src/.gitignore

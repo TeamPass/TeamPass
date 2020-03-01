@@ -65,12 +65,12 @@ class Configuration
     public function get($key): string
     {
         if (isset($this->configuration[$key])) {
-            return (string)$this->configuration[$key];
+            return (string) $this->configuration[$key];
         }
 
         $presets = $this->implementationClass->getPresetValues();
         if (isset($presets[$key])) {
-            return (string)$presets[$key];
+            return (string) $presets[$key];
         }
 
         throw new \Exception("configuration '{$key}' not found");
