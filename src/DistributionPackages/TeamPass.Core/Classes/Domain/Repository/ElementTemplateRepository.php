@@ -30,6 +30,7 @@ use Neos\Flow\Annotations as Flow;
  * @link      https://github.com/TeamPass/TeamPass
  *
  * @Flow\Scope("singleton")
+ * @method mixed findOneByInternalName(string $internalName)
  */
 class ElementTemplateRepository extends AbstractRepository
 {
