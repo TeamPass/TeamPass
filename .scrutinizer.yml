@@ -1,0 +1,4 @@
+build:
+    project_setup:
+        before:
+            - "cd src"
