@@ -1,11 +1,10 @@
 build:
-    project_setup:
-        before:
-            - "cd src"
     nodes:
         analysis:
             tests:
                 override:
                     - php-scrutinizer-run
-        core:
             root_path: './src'
+        environment:
+            php:
+                version: 7.2
