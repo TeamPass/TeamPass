@@ -56,6 +56,7 @@ class WorkQueueService extends AbstractService
      */
     public function addToWorkQueue(int $userId): void
     {
+        /** @scrutinizer ignore-call */
         $workQueue = $this->workQueueRepository->findOneByUser($userId);
 
         // no need to add a user multiple times to the work queue
@@ -153,6 +154,7 @@ class WorkQueueService extends AbstractService
 
         // check if admin user is itself in work queue
         /** @var QueryResultInterface $userInWorkQueue */
+        /** @scrutinizer ignore-call */
         $userInWorkQueue = $this->workQueueRepository->findByUser($userId);
 
         if (count($userInWorkQueue->toArray()) !== 0 || !$user->isSetupComplete()) {
@@ -193,9 +195,11 @@ class WorkQueueService extends AbstractService
     public function deleteUserFromWorkQueue(int $userId, bool $strict = true): void
     {
         if ($strict === true) {
+            /** @scrutinizer ignore-call */
             $workQueueEntity = $this->workQueueRepository->findOneByUser($userId);
             $this->workQueueRepository->remove($workQueueEntity);
         } elseif ($strict === false) {
+            /** @scrutinizer ignore-call */
             $workQueueEntity = $this->workQueueRepository->findOneByUser($userId);
             if ($workQueueEntity instanceof WorkQueue) {
                 $this->workQueueRepository->remove($workQueueEntity);

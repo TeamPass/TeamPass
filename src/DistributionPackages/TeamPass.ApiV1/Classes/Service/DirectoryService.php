@@ -185,6 +185,7 @@ class DirectoryService extends AbstractService
         // checks if backend configuration is complete
         $this->validateParameters($backend->getImplementationClass(), $backendConfiguration);
 
+        /** @scrutinizer ignore-call */
         $directory = $this->directoryRepository->findOneByName($backend->getName());
 
         if ($directory instanceof Directory) {
@@ -230,6 +231,7 @@ class DirectoryService extends AbstractService
         /** @var Directory $directory */
         $directory = $this->directoryRepository->load($backend->getDirectoryId());
 
+        /** @scrutinizer ignore-call */
         $directoryCheck = $this->directoryRepository->findOneByName($backend->getName());
 
         if (

@@ -105,6 +105,7 @@ class EncryptionService extends AbstractService
         $groupElement = $this->groupElementRepository->load($element->getId());
 
         /** @var ElementTemplate $template */
+        /** @scrutinizer ignore-call */
         $template =  $this->elementTemplateRepository->findOneByInternalName($element->getTemplateName());
 
         $result["success"] = true;
@@ -222,6 +223,7 @@ class EncryptionService extends AbstractService
         GroupElement $groupElement,
         string $encryptionKey
     ): void {
+        /** @scrutinizer ignore-call */
         $groups = $this->userGroupRepository->findByAdmin(1);
 
         /** @var UserGroup $group */
@@ -640,6 +642,7 @@ class EncryptionService extends AbstractService
         $result = array();
         $user = $this->userRepository->load($userId);
 
+        /** @scrutinizer ignore-call */
         $intermediateKeys = $this->intermediateKeyRepository->findByUser($user);
 
         /** @var IntermediateKey $intermediateKey */
@@ -659,6 +662,7 @@ class EncryptionService extends AbstractService
      */
     protected function getAllIntermediateKeysForElement(GroupElement $element)
     {
+        /** @scrutinizer ignore-call */
         $intermediateKeys = $this->intermediateKeyRepository->findByGroupElement($element);
 
         return $intermediateKeys;
@@ -675,6 +679,7 @@ class EncryptionService extends AbstractService
     {
         $result = array();
 
+        /** @scrutinizer ignore-call */
         $intermediateKeys = $this->intermediateKeyRepository->findByUser($userId);
 
         /** @var IntermediateKey $ik */
@@ -696,6 +701,7 @@ class EncryptionService extends AbstractService
     {
         $result = array();
 
+        /** @scrutinizer ignore-call */
         $intermediateKeys = $this->intermediateKeyRepository->findByUser($userId);
 
         /** @var IntermediateKey $ik */
@@ -745,6 +751,7 @@ class EncryptionService extends AbstractService
     protected function getAllAdminUsers(): array
     {
         $users = array();
+        /** @scrutinizer ignore-call */
         $groups = $this->userGroupRepository->findByAdmin(1);
 
         /** @var UserGroup $group */

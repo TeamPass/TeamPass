@@ -73,6 +73,7 @@ class AclService extends AbstractService
             $currentGroups[$ar['userGroupId']] = $ar;
         }
 
+        /** @scrutinizer ignore-call */
         $userGroups = $this->userGroupRepository->findByAdmin(false);
 
         /** @var UserGroup $userGroup */

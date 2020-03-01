@@ -163,6 +163,7 @@ class GroupElementService extends AbstractService
 
             if ($element->getEncryptedContents()->count() === 0) {
                 /** @var ElementTemplate $template*/
+                /** @scrutinizer ignore-call */
                 $template =  $this->elementTemplateRepository->findOneByInternalName(ElementTemplate::DEFAULT_TEMPLATE);
 
                 $tmp["template"] = $template->getInternalName();

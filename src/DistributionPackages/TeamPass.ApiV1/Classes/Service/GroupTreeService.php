@@ -412,6 +412,7 @@ class GroupTreeService extends AbstractService
 
         // fetch all non leaf group tree elements. we use this elements to build a complete tree even if user hasn't
         // read permissions on this group tree elements
+        /** @scrutinizer ignore-call */
         $allNonLeafGroupTreeElements = $this->groupTreeElementRepository->findByLeaf(false);
 
         $gtes = array();

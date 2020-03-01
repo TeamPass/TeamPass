@@ -86,6 +86,7 @@ class UserGroupService extends AbstractService
      */
     public function createGroup(Group $group): array
     {
+        /** @scrutinizer ignore-call */
         $userGroup = $this->userGroupRepository->findOneByName($group->getGroupName());
 
         // check if group already exists and throw exception if case
@@ -117,6 +118,7 @@ class UserGroupService extends AbstractService
     {
         $userGroup = $this->userGroupRepository->load($groupId);
 
+        /** @scrutinizer ignore-call */
         $groupCheck = $this->userGroupRepository->findByName($groupDto->getGroupName());
 
         if ($groupCheck instanceof UserGroup && $groupCheck->getName() !== $userGroup->getName()) {
@@ -292,6 +294,7 @@ class UserGroupService extends AbstractService
     public function updateUserInGroupByNames(string $groupName, string $userName): void
     {
         /** @var UserGroup $group */
+        /** @scrutinizer ignore-call */
         $group = $this->userGroupRepository->findOneByName($groupName);
 
         if (!$group instanceof UserGroup) {
@@ -299,6 +302,7 @@ class UserGroupService extends AbstractService
         }
 
         /** @var User $user */
+        /** @scrutinizer ignore-call */
         $user = $this->userRepository->findOneByUsername($userName);
 
         if (!$user instanceof User) {

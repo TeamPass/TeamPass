@@ -138,6 +138,7 @@ class AuthService extends AbstractService
 
         $this->userRepository->unsetDeletedFlagForDeletedUsers($users, $directory);
 
+        /** @scrutinizer ignore-call */
         $intUserFromDirectory = $this->userRepository->findByDirectory($directory);
         // update User settings if anything has changed
         $this->updateUserSettingsFromDirectory($intUserFromDirectory, $users);
