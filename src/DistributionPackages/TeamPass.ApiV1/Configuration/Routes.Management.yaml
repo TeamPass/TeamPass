@@ -1,0 +1,65 @@
+- name: "GET - get the user profile"
+  uriPattern: '/user'
+  defaults:
+    '@action': 'getLoggedInUser'
+  httpMethods:
+    - 'GET'
+
+- name: "PUT - change users password"
+  uriPattern: '/password'
+  defaults:
+    '@action': 'changePassword'
+  httpMethods:
+    - 'PUT'
+
+- name: "PUT - change users language"
+  uriPattern: '/language'
+  defaults:
+    '@action': 'changeLanguage'
+  httpMethods:
+    - 'PUT'
+
+- name: "GET - get users language"
+  uriPattern: '/language'
+  defaults:
+    '@action': 'getLanguage'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - change users theme"
+  uriPattern: '/theme'
+  defaults:
+    '@action': 'changeTheme'
+  httpMethods:
+    - 'POST'
+
+- name: "GET - returns users theme"
+  uriPattern: '/theme'
+  defaults:
+    '@action': 'getTheme'
+  httpMethods:
+    - 'GET'
+
+
+- name: "POST - change users theme"
+  uriPattern: '/tree-alphabetical-order'
+  defaults:
+    '@action': 'setTreeAlphabeticalOrder'
+  httpMethods:
+    - 'POST'
+
+- name: "GET - returns users theme"
+  uriPattern: '/tree-alphabetical-order'
+  defaults:
+    '@action': 'getTreeAlphabeticalOrder'
+  httpMethods:
+    - 'GET'
+
+
+- name: "GET - returns the rsa passphrase complexity regex if enabled"
+  uriPattern: '/rsa-passphrase-complexity'
+  defaults:
+    '@action': 'getRsaPassphraseComplexity'
+  httpMethods:
+    - 'GET'
+

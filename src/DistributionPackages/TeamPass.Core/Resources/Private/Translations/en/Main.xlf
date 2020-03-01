@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="1">
+				<source>SERVICE.NOT_AVAILABLE</source>
+				<target>Service not available</target>
+			</trans-unit>
+            <trans-unit id="2">
+                <source>SERVICE.BAD_REQUEST</source>
+                <target>invalid request</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>AUTH.INVALID_USERNAME</source>
+                <target>Invalid Username/Password</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>AUTH.INVALID_PASSWORD</source>
+                <target>Invalid Username/Password</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>ADMIN.TREE_USERS</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>ADMIN.TREE_GROUPS</source>
+                <target>Groups</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>ADMIN.TREE_DIRECTORIES</source>
+                <target>Directories</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>ADMIN.TREE_PERMISSIONS</source>
+                <target>Permissions</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>ADMIN.TREE_SETTINGS</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG</source>
+                <target>Password Successfully changed</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>MANAGEMENT.SET_LANGUAGE_SUCCESS_MSG</source>
+                <target>Language set to '%langcode%' </target>
+            </trans-unit>
+            <trans-unit id="12">
+                    <source>ADMIN.ADD_USER_TO_WORK_QUEUE_SUCCESS_MSG</source>
+                    <target>User added to queue</target>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

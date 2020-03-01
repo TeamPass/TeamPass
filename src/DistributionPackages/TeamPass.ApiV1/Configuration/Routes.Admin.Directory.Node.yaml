@@ -1,0 +1,6 @@
+- name: "GET - returns the presets for given implementation class"
+  uriPattern: '/presets/{implementationClass}'
+  defaults:
+    '@action': 'getPresetForImplementationClass'
+  httpMethods:
+    - 'GET'

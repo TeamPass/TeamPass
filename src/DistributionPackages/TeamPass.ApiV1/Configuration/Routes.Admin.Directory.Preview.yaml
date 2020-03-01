@@ -1,0 +1,10 @@
+- name: 'test'
+  uriPattern: '/test<TestSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Directory\Preview\Test'
+    '@format': 'json'
+  subRoutes:
+    TestSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Directory.Preview.Test'

@@ -1,0 +1,66 @@
+- name: 'admin'
+  uriPattern: 'admin<AdminSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin'
+    '@format': 'json'
+  subRoutes:
+    AdminSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin'
+
+- name: 'auth'
+  uriPattern: 'auth<AuthSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Auth'
+    '@format': 'json'
+  subRoutes:
+    AuthSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Auth'
+
+- name: 'encryption'
+  uriPattern: 'encryption<EncryptionSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Encryption'
+    '@format': 'json'
+  subRoutes:
+    EncryptionSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Encryption'
+
+- name: 'element'
+  uriPattern: 'element<ElementSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'GroupElement'
+    '@format': 'json'
+  subRoutes:
+    ElementSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'GroupElement'
+
+- name: 'grouptree'
+  uriPattern: 'grouptree<GroupTreeSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'GroupTree'
+    '@format': 'json'
+  subRoutes:
+    GroupTreeSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'GroupTree'
+
+- name: 'management'
+  uriPattern: 'management<ManagementSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Management'
+    '@format': 'json'
+  subRoutes:
+    ManagementSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Management'
+

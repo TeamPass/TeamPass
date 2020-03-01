@@ -1,0 +1,6 @@
+- name: "GET - reads all available directory types (OpenLDAP, ActiveDirectory)"
+  uriPattern: ''
+  defaults:
+    '@action': 'getTypes'
+  httpMethods:
+    - 'GET'

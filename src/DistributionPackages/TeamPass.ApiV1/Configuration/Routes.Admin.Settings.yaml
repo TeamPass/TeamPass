@@ -1,0 +1,13 @@
+- name: "GET - returns all application settings"
+  uriPattern: ''
+  defaults:
+    '@action': 'getSettings'
+  httpMethods:
+    - 'GET'
+
+- name: "PUT - updates a Setting"
+  uriPattern: '/{settingId}'
+  defaults:
+    '@action': 'update'
+  httpMethods:
+    - 'PUT'

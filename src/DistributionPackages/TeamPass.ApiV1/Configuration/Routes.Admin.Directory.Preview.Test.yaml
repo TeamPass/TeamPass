@@ -1,0 +1,6 @@
+- name: "POST - tests a backend directory connection"
+  uriPattern: '/{implementationClass}'
+  defaults:
+    '@action': 'testConnection'
+  httpMethods:
+    - 'POST'

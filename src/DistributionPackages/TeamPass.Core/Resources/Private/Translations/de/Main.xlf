@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="1">
+                <source>SERVICE.NOT_AVAILABLE</source>
+                <target>Dienst nicht verfügbar</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>SERVICE.BAD_REQUEST</source>
+                <target>ungültige Anfrage</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>AUTH.INVALID_USERNAME</source>
+                <target>Benutzername/Password ungültig</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>AUTH.INVALID_PASSWORD</source>
+                <target>Benutzername/Password ungültig</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>ADMIN.TREE_USERS</source>
+                <target>Benutzer</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>ADMIN.TREE_GROUPS</source>
+                <target>Gruppen</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>ADMIN.TREE_DIRECTORIES</source>
+                <target>Verzeichnisse</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>ADMIN.TREE_PERMISSIONS</source>
+                <target>Berechtigungen</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>ADMIN.TREE_SETTINGS</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG</source>
+                <target>Password erfolgreich geändert</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>MANAGEMENT.SET_LANGUAGE_SUCCESS_MSG</source>
+                <target>Sprache auf '%langcode%' gesetzt</target>
+            </trans-unit>
+            <trans-unit id="12">
+                    <source>ADMIN.ADD_USER_TO_WORK_QUEUE_SUCCESS_MSG</source>
+                    <target>Benutzer zur Queue hinzugefügt</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="SERVICE.NOT_AVAILABLE">
+                <source>SERVICE.NOT_AVAILABLE</source>
+                <target>Dienst nicht verfügbar</target>
+            </trans-unit>
+            <trans-unit id="SERVICE.BAD_REQUEST">
+                <source>SERVICE.BAD_REQUEST</source>
+                <target>ungültige Anfrage</target>
+            </trans-unit>
+            <trans-unit id="AUTH.INVALID_USERNAME">
+                <source>AUTH.INVALID_USERNAME</source>
+                <target>Benutzername/Password ungültig</target>
+            </trans-unit>
+            <trans-unit id="AUTH.INVALID_PASSWORD">
+                <source>AUTH.INVALID_PASSWORD</source>
+                <target>Benutzername/Password ungültig</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.TREE_USERS">
+                <source>ADMIN.TREE_USERS</source>
+                <target>Benutzer</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.TREE_GROUPS">
+                <source>ADMIN.TREE_GROUPS</source>
+                <target>Gruppen</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.TREE_DIRECTORIES">
+                <source>ADMIN.TREE_DIRECTORIES</source>
+                <target>Verzeichnisse</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.TREE_PERMISSIONS">
+                <source>ADMIN.TREE_PERMISSIONS</source>
+                <target>Berechtigungen</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.TREE_SETTINGS">
+                <source>ADMIN.TREE_SETTINGS</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG">
+                <source>MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG</source>
+                <target>Password erfolgreich geändert</target>
+            </trans-unit>
+            <trans-unit id="MANAGEMENT.SET_LANGUAGE_SUCCESS_MSG">
+                <source>MANAGEMENT.SET_LANGUAGE_SUCCESS_MSG</source>
+                <target>Sprache auf '%langcode%' gesetzt</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.ADD_USER_TO_WORK_QUEUE_SUCCESS_MSG">
+                    <source>ADMIN.ADD_USER_TO_WORK_QUEUE_SUCCESS_MSG</source>
+                    <target>Benutzer zur Queue hinzugefügt</target>
+            </trans-unit>
+            <trans-unit id="SERVICE.GTE_WITH_GE_DELETION_NOT_ALLOWED">
+                    <source>SERVICE.GTE_WITH_GE_DELETION_NOT_ALLOWED</source>
+                    <target>Ordner kann nicht gelöscht werden!</target>
+            </trans-unit>
+            <trans-unit id="SERVICE.GTE_WITH_GTE_DELETION_NOT_ALLOWED">
+                    <source>SERVICE.GTE_WITH_GTE_DELETION_NOT_ALLOWED</source>
+                    <target>Ordner die andere Ordner enthalten, können nicht gelöscht werden!</target>
+            </trans-unit>
+            <trans-unit id="SERVICE.MOVING_ELEMENT_TO_ROOT_NOT_ALLOWED">
+                    <source>SERVICE.MOVING_ELEMENT_TO_ROOT_NOT_ALLOWED</source>
+                    <target>Elemente zur Root Ebene verschieben ist nicht erlaubt!</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

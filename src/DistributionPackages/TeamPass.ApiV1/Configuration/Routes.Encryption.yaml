@@ -1,0 +1,41 @@
+- name: "POST - start handshake"
+  uriPattern: '/handshake/start'
+  defaults:
+    '@action': 'startHandshake'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - ack handshake"
+  uriPattern: '/handshake/ack'
+  defaults:
+    '@action': 'ackHandshake'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - rsa setup"
+  uriPattern: '/rsa/setup'
+  defaults:
+    '@action': 'setUserKeyPair'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - rsa update"
+  uriPattern: '/rsa/update'
+  defaults:
+    '@action': 'updateUserPrivateKey'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - encrypted element"
+  uriPattern: '/element/get'
+  defaults:
+    '@action': 'getEncryptedElement'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - update element"
+  uriPattern: '/element/update'
+  defaults:
+    '@action': 'updateElement'
+  httpMethods:
+    - 'POST'

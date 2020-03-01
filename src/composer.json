@@ -1,0 +1,50 @@
+{
+    "name": "teampass/teampass",
+    "description": "TeamPass - a password manager for teams",
+    "license": "GPL-3.0-only",
+    "support": {
+        "issues": "https://github.com/teampass/teampass/issues",
+        "source": "https://github.com/teampass/teampass"
+    },
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-json": "*",
+        "ext-ldap": "*",
+        "ext-openssl": "*",
+        "neos/flow": "~6.1.0",
+        "teampass/apiv1": "@dev",
+        "teampass/core": "@dev",
+        "adldap2/adldap2": "^10.0",
+        "dittertp/gibberish-aes-php": "^2.0"
+    },
+    "require-dev": {
+        "neos/kickstarter": "~6.1.0",
+        "neos/buildessentials": "~6.1.0",
+        "neos/behat": "dev-master",
+        "phpunit/phpunit": "~6.0.0",
+        "squizlabs/php_codesniffer": "3.*",
+        "mikey179/vfsstream": "~1.6"
+    },
+    "repositories": {
+        "distributionPackages": {
+            "type": "path",
+            "url": "./DistributionPackages/*"
+        }
+    },
+    "replace": {
+        "typo3/flow-base-distribution": "self.version"
+    },
+    "suggest": {
+        "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
+    },
+    "scripts": {
+        "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}

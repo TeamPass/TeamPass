@@ -1,0 +1,12 @@
+/src/Build/
+/src/Configuration/
+/src/Data/
+/src/Packages/
+/src/Web/
+/src/bin/
+/src/Readme.rst
+/src/Upgrading.rst
+/src/flow
+/src/flow.bat
+/.idea
+/src/app/build

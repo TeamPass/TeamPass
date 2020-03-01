@@ -1,0 +1,27 @@
+- name: "GET - returns the tree"
+  uriPattern: '/{node}'
+  defaults:
+    '@action': 'getTree'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - create a new node"
+  uriPattern: '(/)'
+  defaults:
+    '@action': 'create'
+  httpMethods:
+    - 'POST'
+
+- name: "PUT - update a node"
+  uriPattern: '/{node}'
+  defaults:
+    '@action': 'updateTree'
+  httpMethods:
+    - 'PUT'
+
+- name: "DELETE - delete a node"
+  uriPattern: '/{node}'
+  defaults:
+    '@action': 'delete'
+  httpMethods:
+    - 'DELETE'

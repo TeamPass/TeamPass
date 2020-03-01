@@ -1,0 +1,13 @@
+- name: "POST - Login"
+  uriPattern: '/login'
+  defaults:
+    '@action': 'login'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - Logout"
+  uriPattern: '/logout'
+  defaults:
+    '@action': 'logout'
+  httpMethods:
+    - 'GET'

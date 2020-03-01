@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "teampass/core",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TeamPass\\Core\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "TeamPass.Core"
+        }
+    }
+}

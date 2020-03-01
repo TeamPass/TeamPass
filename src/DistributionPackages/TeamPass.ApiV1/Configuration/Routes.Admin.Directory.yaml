@@ -1,0 +1,88 @@
+- name: "GET - reads all configured directories"
+  uriPattern: ''
+  defaults:
+    '@action': 'getAllDirectories'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - creates a new external directory"
+  uriPattern: ''
+  defaults:
+    '@action': 'create'
+  httpMethods:
+    - 'POST'
+
+- name: "PUT - updates a existing directory"
+  uriPattern: ''
+  defaults:
+    '@action': 'update'
+  httpMethods:
+    - 'PUT'
+
+- name: "GET - returns one directory based on given id"
+  uriPattern: '/{directoryId}'
+  defaults:
+    '@action': 'getDirectory'
+  httpMethods:
+    - 'GET'
+
+- name: "GET - returns all external directories"
+  uriPattern: '/external'
+  defaults:
+    '@action': 'getExternalDirectory'
+  httpMethods:
+    - 'GET'
+
+- name: "DELETE - deletes a directory"
+  uriPattern: '/{directoryId}'
+  defaults:
+    '@action': 'delete'
+  httpMethods:
+    - 'DELETE'
+
+- name: "POST - change directory position index"
+  uriPattern: '/index/{directoryId}/{direction}'
+  defaults:
+    '@action': 'changeIndexDirectory'
+  httpMethods:
+    - 'POST'
+
+- name: "POST - sync backend directory"
+  uriPattern: '/sync/{directoryId}'
+  defaults:
+    '@action': 'sync'
+  httpMethods:
+    - 'POST'
+
+- name: 'type'
+  uriPattern: '/type<TypeSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Directory\Type'
+    '@format': 'json'
+  subRoutes:
+    TypeSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Directory.Type'
+
+- name: 'node'
+  uriPattern: '/node<NodeSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Directory\Node'
+    '@format': 'json'
+  subRoutes:
+    NodeSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Directory.Node'
+
+- name: 'preview'
+  uriPattern: '/preview<PreviewSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Directory\Preview'
+    '@format': 'json'
+  subRoutes:
+    PreviewSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Directory.Preview'

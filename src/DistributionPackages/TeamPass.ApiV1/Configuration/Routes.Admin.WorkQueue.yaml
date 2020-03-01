@@ -1,0 +1,13 @@
+- name: "GET - returns all work queue elements"
+  uriPattern: ''
+  defaults:
+    '@action': 'read'
+  httpMethods:
+    - 'GET'
+
+- name: "DELETE - deletes a element from work queue"
+  uriPattern: '/{workQueueId}'
+  defaults:
+    '@action': 'deleteWorkQueue'
+  httpMethods:
+    - 'DELETE'

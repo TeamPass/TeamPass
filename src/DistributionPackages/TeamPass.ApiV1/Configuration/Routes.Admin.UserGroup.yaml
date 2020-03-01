@@ -1,0 +1,55 @@
+- name: "GET- returns all local UserGroups"
+  uriPattern: ''
+  defaults:
+    '@action': 'get'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - creates a new group"
+  uriPattern: ''
+  defaults:
+    '@action': 'create'
+  httpMethods:
+    - 'POST'
+
+- name: "PUT - updates a local group"
+  uriPattern: '/{groupId}'
+  defaults:
+    '@action': 'update'
+  httpMethods:
+    - 'PUT'
+
+- name: "DELETE - deletes a local group"
+  uriPattern: '/{groupId}'
+  defaults:
+    '@action': 'delete'
+  httpMethods:
+    - 'DELETE'
+
+- name: "GET - read all users in group"
+  uriPattern: '/user'
+  defaults:
+    '@action': 'readUsersInGroup'
+  httpMethods:
+    - 'GET'
+
+- name: "PUT - updates users in a group"
+  uriPattern: '/user/{userId}'
+  defaults:
+    '@action': 'updateUserInGroup'
+  httpMethods:
+    - 'PUT'
+
+- name: "DELETE - deletes a user from a group"
+  uriPattern: '/user/{userId}'
+  defaults:
+    '@action': 'deleteUserFromGroup'
+  httpMethods:
+    - 'DELETE'
+
+- name: "GET - returns all users which are not already in given group"
+  uriPattern: '/user/available'
+  defaults:
+    '@action': 'readAvailableUsers'
+  httpMethods:
+    - 'GET'

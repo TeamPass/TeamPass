@@ -1,0 +1,27 @@
+- name: "GET- read element"
+  uriPattern: ''
+  defaults:
+    '@action': 'read'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - create element"
+  uriPattern: ''
+  defaults:
+    '@action': 'create'
+  httpMethods:
+    - 'POST'
+
+- name: "PUT - update element"
+  uriPattern: '/{elementId}'
+  defaults:
+    '@action': 'update'
+  httpMethods:
+    - 'PUT'
+
+- name: "DELETE - delete element"
+  uriPattern: '/{elementId}'
+  defaults:
+    '@action': 'delete'
+  httpMethods:
+    - 'DELETE'

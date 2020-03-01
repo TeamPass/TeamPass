@@ -1,0 +1,86 @@
+- name: "GET - get tree for admin module"
+  uriPattern: '/root'
+  defaults:
+    '@action': 'getTree'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - encrypt elements for user"
+  uriPattern: '/encrypt'
+  defaults:
+    '@action': 'encryptForUser'
+  httpMethods:
+    - 'POST'
+
+- name: "GET - encryption poll for admin users"
+  uriPattern: '/poll'
+  defaults:
+    '@action': 'doEncryptionQueuePoll'
+  httpMethods:
+    - 'GET'
+
+- name: 'directory'
+  uriPattern: '/directory<DirectorySubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Directory'
+    '@format': 'json'
+  subRoutes:
+    DirectorySubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Directory'
+
+- name: 'permission'
+  uriPattern: '/permission<PermissionSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Permission'
+    '@format': 'json'
+  subRoutes:
+    PermissionSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Permission'
+
+- name: 'settings'
+  uriPattern: '/settings<SettingsSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Setting'
+    '@format': 'json'
+  subRoutes:
+    SettingsSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Settings'
+
+- name: 'user'
+  uriPattern: '/user<UserSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\User'
+    '@format': 'json'
+  subRoutes:
+    UserSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.User'
+
+- name: 'usergroup'
+  uriPattern: '/group<UserGroupSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\UserGroup'
+    '@format': 'json'
+  subRoutes:
+    UserGroupSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.UserGroup'
+
+- name: 'workqueue'
+  uriPattern: '/wq<WorkQueueSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\WorkQueue'
+    '@format': 'json'
+  subRoutes:
+    WorkQueueSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.WorkQueue'

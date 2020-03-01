@@ -1,0 +1,74 @@
+name: TeamPass
+
+on:
+  push:
+    tags:
+        - '*'
+
+jobs:
+  build-release:
+    name: build-release
+    runs-on: ubuntu-18.04
+    env:
+      CI: true
+      PROJECT_NAME: "teampass"
+      SENCHA_CMD_VERSION: "6.2.2"
+      PHP_VERSION: "7.3"
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+            php-version: ${{env.PHP_VERSION}}
+          extensions: mbstring, intl, json, ldap, openssl
+
+      - name: Build WebApplication
+        run: |
+          wget http://cdn.sencha.com/cmd/${SENCHA_CMD_VERSION}/no-jre/SenchaCmd-${SENCHA_CMD_VERSION}-linux-amd64.sh.zip
+          unzip SenchaCmd-${SENCHA_CMD_VERSION}-linux-amd64.sh.zip
+          ./SenchaCmd-${SENCHA_CMD_VERSION}.*-linux-amd64.sh -Dall=true -q
+          rm SenchaCmd-${SENCHA_CMD_VERSION}-linux-amd64.sh.zip
+          rm SenchaCmd-${SENCHA_CMD_VERSION}.*-linux-amd64.sh
+          export PATH=~/bin/Sencha/Cmd/:$PATH
+          cd src/app
+          sencha app build teampass production
+          sencha app build teampass-pink production
+
+      - name: Build Neos Flow application
+        run: |
+          cd src
+          composer install --prefer-dist --no-dev
+
+      - name: Create Release Artifact
+        run: |
+            mv src ${{ env.PROJECT_NAME }}-${{ env.RELEASE_VERSION }}
+            tar czf ${{ env.PROJECT_NAME }}-${{ env.RELEASE_VERSION }}.tar.gz ${{ env.PROJECT_NAME }}-${{ env.RELEASE_VERSION }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          allowUpdates: true
+          draft: false
+          prerelease: false
+
+      - name: Upload Release
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ env.PROJECT_NAME }}-${{ env.RELEASE_VERSION }}.tar.gz
+          asset_name: ${{ env.PROJECT_NAME }}-${{ env.RELEASE_VERSION }}.tar.gz
+          asset_content_type: application/tar+gzip

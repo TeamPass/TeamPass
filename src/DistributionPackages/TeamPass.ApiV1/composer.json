@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "teampass/apiv1",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TeamPass\\ApiV1\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "TeamPass.ApiV1"
+        }
+    }
+}

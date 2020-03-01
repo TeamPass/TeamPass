@@ -1,0 +1,62 @@
+- name: "GET - returns all application users"
+  uriPattern: ''
+  defaults:
+    '@action': 'get'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - creates a new user"
+  uriPattern: ''
+  defaults:
+    '@action': 'create'
+  httpMethods:
+    - 'POST'
+
+- name: "PUT - updates a user"
+  uriPattern: '/{userId}'
+  defaults:
+    '@action': 'update'
+  httpMethods:
+    - 'PUT'
+
+- name: "DELETE - deletes a local user"
+  uriPattern: '/{userId}'
+  defaults:
+    '@action': 'delete'
+  httpMethods:
+    - 'DELETE'
+
+- name: "GET - returns all groups which not containing given user"
+  uriPattern: '/available'
+  defaults:
+    '@action': 'readAvailableGroups'
+  httpMethods:
+    - 'GET'
+
+- name: "PUT - updates group memberships for user"
+  uriPattern: '/group/{groupId}'
+  defaults:
+    '@action': 'updateUsersGroups'
+  httpMethods:
+    - 'PUT'
+
+- name: "DELETE - delete given user from given groups"
+  uriPattern: '/group/{groupId}'
+  defaults:
+    '@action': 'deleteUserFromGroups'
+  httpMethods:
+    - 'DELETE'
+
+- name: "GET - get all group which containing given user"
+  uriPattern: '/group'
+  defaults:
+    '@action': 'readUsersGroups'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - adds user to work queue"
+  uriPattern: '/addToWorkQueue/{userId}'
+  defaults:
+    '@action': 'addUserToWorkQueue'
+  httpMethods:
+    - 'POST'

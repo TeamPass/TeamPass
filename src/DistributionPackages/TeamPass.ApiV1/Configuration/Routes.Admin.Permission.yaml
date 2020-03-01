@@ -1,0 +1,41 @@
+- name: "GET - get permissions"
+  uriPattern: ''
+  defaults:
+    '@action': 'read'
+  httpMethods:
+    - 'GET'
+
+- name: creates a new acl
+  uriPattern: ''
+  defaults:
+    '@action': 'create'
+  httpMethods:
+    - 'POST'
+
+- name: updates the permissions of a existing acl
+  uriPattern: '/{node}'
+  defaults:
+    '@action': 'update'
+  httpMethods:
+    - 'PUT'
+
+- name: delete a permission
+  uriPattern: '/{node}'
+  defaults:
+    '@action': 'delete'
+  httpMethods:
+    - 'DELETE'
+
+- name: Returns all user groups that are not currently used by this group
+  uriPattern: '/group/available'
+  defaults:
+    '@action': 'readAvailableUserGroupsForGroup'
+  httpMethods:
+    - 'GET'
+
+- name: "GET - returns the grouptree"
+  uriPattern: '/grouptree/{node}'
+  defaults:
+    '@action': 'getGroupTree'
+  httpMethods:
+    - 'GET'
