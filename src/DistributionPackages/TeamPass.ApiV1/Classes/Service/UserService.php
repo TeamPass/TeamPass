@@ -80,6 +80,7 @@ class UserService extends AbstractService
      */
     public function create(Person $person, ?string $group = null): array
     {
+        /** @scrutinizer ignore-call */
         $result = $this->userRepository->findOneByUsername($person->getUsername());
         if ($result) {
             throw new UserException("a User with username '{$person->getUsername()}' already exists");
@@ -87,6 +88,7 @@ class UserService extends AbstractService
 
         $userGroup = null;
         if ($group) {
+            /** @scrutinizer ignore-call */
             $userGroup = $this->userGroupRepository->findOneByName($group);
 
             // if no group was found we stop here
@@ -209,6 +211,7 @@ class UserService extends AbstractService
             $ar = array();
 
             // get all non leaf group tree elements
+            /** @scrutinizer ignore-call */
             $groupTreeElements = $this->groupTreeElementRepository->findByLeaf(false);
 
             /** @var $gte GroupTreeElement */
@@ -589,7 +592,7 @@ class UserService extends AbstractService
 
         $lang = $user->getLanguage();
 
-        if ($lang === null) {
+        if (is_null($lang)) {
             $lang = Keys::DEFAULT_LANGUAGE;
         }
         return $lang;
