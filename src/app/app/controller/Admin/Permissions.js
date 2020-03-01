@@ -56,7 +56,7 @@ Ext.define('TeamPass.controller.Admin.Permissions', {
                     beforesync: this.syncAdminPermissionsStore
                 },
                 '#Admin.GroupTree': {
-                    beforeload: this.loadAdminGroupTreeStore,
+                    beforeload: this.loadAdminGroupTreeStore
                 }
             }
         });
@@ -167,5 +167,5 @@ Ext.define('TeamPass.controller.Admin.Permissions', {
         });
 
         this.permissinMenu.hide();
-    },
+    }
 });

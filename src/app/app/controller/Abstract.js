@@ -43,6 +43,6 @@ Ext.define('TeamPass.controller.Abstract', {
         setLocalStorageValue: 'TeamPass.mixin.LocalStorage',
         getLocalStorageValue:'TeamPass.mixin.LocalStorage',
         destroyCookies: 'TeamPass.mixin.Session',
-        checkIdentifier: 'TeamPass.mixin.Session',
+        checkIdentifier: 'TeamPass.mixin.Session'
     }
 });

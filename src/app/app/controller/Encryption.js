@@ -90,7 +90,7 @@ Ext.define('TeamPass.controller.Encryption', {
         this.encryptForUser(rec);
     },
 
-    encryptForUser: function(rec, data, all = false) {
+    encryptForUser: function(rec, data, all) {
         if (data) {
             reqObj = {
                 massEncryption: {

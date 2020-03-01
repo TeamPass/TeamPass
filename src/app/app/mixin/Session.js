@@ -94,8 +94,8 @@ Ext.define('TeamPass.mixin.Session', {
      * @returns void
      */
     checkIdentifier: function() {
-        let storedIdentifier = sessionStorage.getItem('session');
-        let identifierCookie = Ext.util.Cookies.get(TeamPass.Util.Settings.get("IdentifierCookie"));
+        var storedIdentifier = sessionStorage.getItem('session');
+        var identifierCookie = Ext.util.Cookies.get(TeamPass.Util.Settings.get("IdentifierCookie"));
 
         if (storedIdentifier !== identifierCookie) {
             console.log("identifierCookie has changed - appShutdown initiated!");
