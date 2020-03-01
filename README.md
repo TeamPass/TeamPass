@@ -1,3 +1,5 @@
+![TeamPass](https://github.com/TeamPass/TeamPass/workflows/TeamPass/badge.svg) [![Build Status](https://scrutinizer-ci.com/g/TeamPass/TeamPass/badges/build.png?b=master)](https://scrutinizer-ci.com/g/TeamPass/TeamPass/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TeamPass/TeamPass/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TeamPass/TeamPass/?branch=master)
+
 # Development
 
 ## App
