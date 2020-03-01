@@ -5,6 +5,3 @@ build:
                 override:
                     - php-scrutinizer-run
             root_path: './src'
-        environment:
-            php:
-                version: 7.2
