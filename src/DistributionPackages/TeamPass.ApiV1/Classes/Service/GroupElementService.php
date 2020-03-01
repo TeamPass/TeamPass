@@ -162,8 +162,8 @@ class GroupElementService extends AbstractService
             $tmp["groupId"] = $element->getGroupTreeElement()->getGroupTreeElementId();
 
             if ($element->getEncryptedContents()->count() === 0) {
-                /** @var ElementTemplate $template*/
                 /** @scrutinizer ignore-call */
+                /** @var ElementTemplate $template*/
                 $template =  $this->elementTemplateRepository->findOneByInternalName(ElementTemplate::DEFAULT_TEMPLATE);
 
                 $tmp["template"] = $template->getInternalName();

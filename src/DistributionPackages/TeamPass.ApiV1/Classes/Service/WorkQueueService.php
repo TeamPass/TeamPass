@@ -194,11 +194,11 @@ class WorkQueueService extends AbstractService
      */
     public function deleteUserFromWorkQueue(int $userId, bool $strict = true): void
     {
-        if ($strict === true) {
+        if ($strict) {
             /** @scrutinizer ignore-call */
             $workQueueEntity = $this->workQueueRepository->findOneByUser($userId);
             $this->workQueueRepository->remove($workQueueEntity);
-        } elseif ($strict === false) {
+        } else {
             /** @scrutinizer ignore-call */
             $workQueueEntity = $this->workQueueRepository->findOneByUser($userId);
             if ($workQueueEntity instanceof WorkQueue) {
