@@ -55,7 +55,7 @@ class GroupElementService extends AbstractService
      */
     public function createGroupElement(Element $element): int
     {
-        $groupTreeElement =  $this->groupTreeElementRepository->load($element->getGroupId());
+        $groupTreeElement = $this->groupTreeElementRepository->load($element->getGroupId());
 
         $groupElement = new GroupElement();
         $groupElement->setName($element->getTitle());
@@ -81,7 +81,7 @@ class GroupElementService extends AbstractService
         // the elementId property in DTO has to have be a sting because of extjs 6
         $elementId = (int) $element->getElementId();
         /** @var GroupElement $groupElement */
-        $groupElement =  $this->groupElementRepository->load($elementId);
+        $groupElement = $this->groupElementRepository->load($elementId);
 
         if ($element->getTitle() !== null) {
             $groupElement->setName($element->getTitle());
@@ -119,7 +119,7 @@ class GroupElementService extends AbstractService
     public function deleteGroupElement(int $elementId): void
     {
         /** @var GroupElement $groupElement */
-        $groupElement =  $this->groupElementRepository->load($elementId);
+        $groupElement = $this->groupElementRepository->load($elementId);
 
         $this->groupElementRepository->update($groupElement);
 
@@ -163,7 +163,7 @@ class GroupElementService extends AbstractService
 
             if ($element->getEncryptedContents()->count() === 0) {
                 /** @var ElementTemplate $template*/
-                $template =  $this->elementTemplateRepository->findOneByInternalName(ElementTemplate::DEFAULT_TEMPLATE);
+                $template = $this->elementTemplateRepository->findOneByInternalName(ElementTemplate::DEFAULT_TEMPLATE);
 
                 $tmp["template"] = $template->getInternalName();
                 $tmp["isEncrypted"] = false;
