@@ -1,5 +1,6 @@
 /src/Build/
-/src/Configuration/
+/src/Configuration/Production
+/src/Configuration/Development
 /src/Data/
 /src/Packages/
 /src/Web/

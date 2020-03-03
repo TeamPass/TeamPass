@@ -1,0 +1,6 @@
+-
+  name: 'Teampass api v1 subroutes'
+  uriPattern: 'api/v1/<ApiV1SubRoutes>'
+  subRoutes:
+    'ApiV1SubRoutes':
+      package: 'TeamPass.ApiV1'

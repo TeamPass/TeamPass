@@ -135,7 +135,7 @@ class Version20200223175749 extends AbstractMigration
                 'name' => 'Groups',
                 '`index`' => 0,
                 'expanded' => true,
-                'leaf' => false,
+                'leaf' => 0,
                 'isroot' => true
             )
         );
@@ -148,7 +148,7 @@ class Version20200223175749 extends AbstractMigration
                 'pcreate' => true,
                 'pupdate' => true,
                 'pdelete' => true,
-                'inherited' => false,
+                'inherited' => 0,
                 'grouptreeelement' => $groupTreeId
             )
         );

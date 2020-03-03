@@ -51,7 +51,10 @@ class UserRepository extends AbstractRepository
         return $query->matching(
             $query->logicalAnd([
                 $query->equals('username', $username),
-                $query->equals('deleted', false)
+                $query->logicalOr([
+                    $query->equals('deleted', false),
+                    $query->equals('deleted', null)
+                ])
             ])
         )->execute()->getFirst();
     }
