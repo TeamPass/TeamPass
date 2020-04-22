@@ -22,6 +22,7 @@ Ext.define('TeamPass.store.AbstractTreeStore', {
         this.proxy.on('exception', this.onProxyException, this);
     },
     onProxyException: function(proxy, response, operation, eOpts) {
+        console.log("treestoreException");
         response = Ext.JSON.decode(response.responseText);
         var message = "<no message>";
         if (typeof(response.message) !== "undefinied") {
@@ -30,5 +31,7 @@ Ext.define('TeamPass.store.AbstractTreeStore', {
 
         Ext.create('widget.ErrorNotification',{title: 'Error',html: message}).show();
         TeamPass.app.fireEvent("checkLoginState", response);
+
+        this.reload();
     }
 });
