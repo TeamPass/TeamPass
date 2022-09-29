@@ -83,6 +83,9 @@ Ext.define('TeamPass.controller.Admin.Permissions', {
     },
 
     onPermissionsGridAfterRender: function() {
+
+        console.log("onPermissionsGridAfterRender");
+
         this.getAdminGroupTreeStore().load();
 
         delete this.getAdminPermissionsStore().getProxy().extraParams;
@@ -93,6 +96,7 @@ Ext.define('TeamPass.controller.Admin.Permissions', {
     },
 
     onTreeGridItemClick: function(dv, record) {
+
         this.getAdminPermissionsStore().getProxy().extraParams = {gteId: record.get('id')};
         this.getAdminPermissionsStore().load();
 

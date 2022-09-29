@@ -21,6 +21,7 @@ Ext.define('TeamPass.controller.Admins', {
         'TeamPass.view.Admin.User.Container',
         'TeamPass.view.Admin.User.Grid',
         'TeamPass.view.Admin.Permissions.Container',
+        'TeamPass.view.Admin.Export.Container',
         'TeamPass.view.Admin.Settings.Container',
         'TeamPass.view.Admin.Settings.Grid',
         'TeamPass.view.Admin.Directory.Container',

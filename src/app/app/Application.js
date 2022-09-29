@@ -31,6 +31,7 @@ Ext.define('TeamPass.Application', {
         'Admin.Permissions',
         'Admin.Users',
         'Admin.Settings',
+        'Admin.Export',
         'Admin.UserGroups',
         'Admin.Directories',
         'Admin.Directory.Management',

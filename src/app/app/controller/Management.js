@@ -436,7 +436,7 @@ Ext.define('TeamPass.controller.Management', {
      */
     onAppStart:function() {
         fullName = this.getSessionDataValue('fullName');
-        string = Ext.String.format(TeamPass.Locales.gettext("HEADER.LOGGED_IN_TEXT") + ': <strong>{0}</div>', fullName);
+        string = Ext.String.format(TeamPass.Locales.gettext("HEADER.LOGGED_IN_TEXT") + ': <strong>{0}</<strong>', fullName);
         this.getWelcomeText().setText(string);
         this.initEncryption();
     },

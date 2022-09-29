@@ -38,6 +38,18 @@
                 <source>ADMIN.TREE_SETTINGS</source>
                 <target>Settings</target>
             </trans-unit>
+            <trans-unit id="ADMIN.TREE_EXPORT">
+                <source>ADMIN.TREE_EXPORT</source>
+                <target>Export</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.ENTE">
+                <source>ADMIN.ENTE</source>
+                <target>Export</target>
+            </trans-unit>
+            <trans-unit id="ADMIN.EXPORT_DETAIL_STATUS_TEXTAREA_LABEL">
+                <source>ADMIN.EXPORT_DETAIL_STATUS_TEXTAREA_LABEL</source>
+                <target>Export</target>
+            </trans-unit>
             <trans-unit id="MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG">
                 <source>MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG</source>
                 <target>Password Successfully changed</target>

@@ -7,6 +7,8 @@
 ### Development
 
 ```bash
+export PATH=~/bin/Sencha/Cmd/:$PATH
+export OPENSSL_CONF=/dev/null
 sencha app watch
 ```
 

@@ -130,6 +130,36 @@ class GroupTreeService extends AbstractService
     }
 
     /**
+     * @param int $groupId
+     *
+     * @return array
+     * @throws \Exception
+     */
+    public function getGroupNamePath(int $groupId)
+    {
+        /** @var $group GroupTreeElement  */
+        $group = $this->groupTreeElementRepository->load($groupId);
+
+        $path = $this->getParentsName($group);
+        $path[] = $group->getName();
+
+        return $path;
+    }
+
+
+    protected function getParentsName(GroupTreeElement $group, $result=[])
+    {
+        if (is_null($group->getParent())) {
+            return array_reverse($result);
+        }
+
+        $parentGroup = $group->getParent();
+        $result[] = $parentGroup->getName();
+
+        return $this->getParentsName($parentGroup, $result);
+    }
+
+    /**
      * try's to delete a leaf group tree element. this element has to be empty
      *
      * @param GroupTreeElement $gte the group tree element to delete

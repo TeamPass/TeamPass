@@ -38,6 +38,10 @@
                 <source>ADMIN.TREE_SETTINGS</source>
                 <target>Einstellungen</target>
             </trans-unit>
+            <trans-unit id="ADMIN.TREE_EXPORT">
+                <source>ADMIN.TREE_EXPORT</source>
+                <target>Export</target>
+            </trans-unit>
             <trans-unit id="MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG">
                 <source>MANAGEMENT.CHANGE_PASSWORD_SUCCESS_MSG</source>
                 <target>Password erfolgreich geändert</target>

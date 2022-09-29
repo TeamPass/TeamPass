@@ -168,11 +168,11 @@ class AbstractService
      * decrypts given content with given rsa private key
      *
      * @param string $encryptedContent the encrypted content
-     * @param string $privateKey       the users private key
+     * @param mixed $privateKey       the users private key
      *
      * @return mixed
      */
-    protected function rsaDecrypt(string $encryptedContent, string $privateKey)
+    protected function rsaDecrypt(string $encryptedContent, $privateKey)
     {
         openssl_private_decrypt(base64_decode($encryptedContent), $output, $privateKey);
 

@@ -52,6 +52,17 @@
       package: 'TeamPass.ApiV1'
       suffix: 'Admin.Settings'
 
+- name: 'export'
+  uriPattern: '/export<SettingsSubroutes>'
+  defaults:
+    '@package': 'TeamPass.ApiV1'
+    '@controller': 'Admin\Export'
+    '@format': 'json'
+  subRoutes:
+    SettingsSubroutes:
+      package: 'TeamPass.ApiV1'
+      suffix: 'Admin.Export'
+
 - name: 'user'
   uriPattern: '/user<UserSubroutes>'
   defaults:

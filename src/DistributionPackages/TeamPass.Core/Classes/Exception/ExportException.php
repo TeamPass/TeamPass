@@ -17,32 +17,17 @@
 
 declare(strict_types=1);
 
-namespace TeamPass\Core\Domain\Repository;
-
-use Neos\Flow\Annotations as Flow;
+namespace TeamPass\Core\Exception;
 
 /**
- * Class GroupTreeElementRepository
+ * Class ExportException
  *
  * @author    Philipp Dittert <philipp.dittert@gmail.com>
  * @copyright 2020 Philipp Dittert <philipp.dittert@gmail.com>
  * @license   http://www.gnu.org/licenses/gpl.txt GNU General Public License, version 3 (GPL-3.0)
  * @link      https://github.com/TeamPass/TeamPass
- *
- * @Flow\Scope("singleton")
  */
-class GroupTreeElementRepository extends AbstractRepository
+
+class ExportException extends \Exception
 {
-    /**
-     * @return array
-     */
-    public function getChilds(int $groupId): array
-    {
-        $query = $this->createQuery();
-        return $query->matching(
-            $query->equals('parent', $groupId)
-        )
-            ->execute()
-            ->toArray();
-    }
 }

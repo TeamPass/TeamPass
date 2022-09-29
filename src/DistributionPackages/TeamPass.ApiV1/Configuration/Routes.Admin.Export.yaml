@@ -1,0 +1,13 @@
+- name: "GET - getGroupPathAction"
+  uriPattern: '/group/path/{groupId}'
+  defaults:
+    '@action': 'getGroupPath'
+  httpMethods:
+    - 'GET'
+
+- name: "POST - postExportAction"
+  uriPattern: '/{groupId}'
+  defaults:
+    '@action': 'postExport'
+  httpMethods:
+    - 'POST'

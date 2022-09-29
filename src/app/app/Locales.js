@@ -666,8 +666,14 @@ Ext.define('TeamPass.Locales', {
             "en": "Save",
             "de": "Speichern"
         },
-
-
+        "ADMIN.EXPORT_DETAIL_TOOLBAR_BTN": {
+            "en": "Export",
+            "de": "Export"
+        },
+        "ADMIN.EXPORT_DETAIL_STATUS_TEXTAREA_LABEL": {
+            "en": "State",
+            "de": "Status"
+        },
         "SETTINGS.WINDOW_TITLE": {
             "en": "Settings",
             "de": "Einstellungen"

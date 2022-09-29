@@ -129,6 +129,12 @@ class AdminController extends ProtectedAdminController
                 "alias" => "widget.adminsettingscontainer",
                 "leaf" => true,
                 "parentId" => "root"
+            ),
+            array(
+                "text" => $this->translatorService->trans('ADMIN.TREE_EXPORT'),
+                "alias" => "widget.adminexportcontainer",
+                "leaf" => true,
+                "parentId" => "root"
             )
         );
 

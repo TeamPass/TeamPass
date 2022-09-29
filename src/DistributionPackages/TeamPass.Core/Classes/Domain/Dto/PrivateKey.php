@@ -17,32 +17,38 @@
 
 declare(strict_types=1);
 
-namespace TeamPass\Core\Domain\Repository;
+namespace TeamPass\Core\Domain\Dto;
 
 use Neos\Flow\Annotations as Flow;
 
 /**
- * Class GroupTreeElementRepository
+ * Class PrivateKey
  *
  * @author    Philipp Dittert <philipp.dittert@gmail.com>
- * @copyright 2020 Philipp Dittert <philipp.dittert@gmail.com>
+ * @copyright 2022 Philipp Dittert <philipp.dittert@gmail.com>
  * @license   http://www.gnu.org/licenses/gpl.txt GNU General Public License, version 3 (GPL-3.0)
  * @link      https://github.com/TeamPass/TeamPass
- *
- * @Flow\Scope("singleton")
  */
-class GroupTreeElementRepository extends AbstractRepository
+class PrivateKey
 {
     /**
-     * @return array
+     * @var string
      */
-    public function getChilds(int $groupId): array
+    protected $privateKey;
+
+    /**
+     * @return string
+     */
+    public function getPrivateKey(): string
     {
-        $query = $this->createQuery();
-        return $query->matching(
-            $query->equals('parent', $groupId)
-        )
-            ->execute()
-            ->toArray();
+        return $this->privateKey;
+    }
+
+    /**
+     * @param string $privateKey
+     */
+    public function setPrivateKey(string $privateKey): void
+    {
+        $this->privateKey = $privateKey;
     }
 }
