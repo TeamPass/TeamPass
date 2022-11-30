@@ -125,7 +125,7 @@ class ExportService extends AbstractService
         /** @var GroupTreeElement $child */
         foreach ($children as $child) {
             $newPath = $path;
-            $newPath[] = $child->getName();
+            $newPath[] = $this->getNormalizedName($child->getName());
 
             if ($child->getLeaf()) {
                 $tmp=[];
@@ -139,6 +139,15 @@ class ExportService extends AbstractService
             }
         }
         return $data;
+    }
+
+    protected function getNormalizedName($name)
+    {
+        $normalizedName = trim($name);
+        $normalizedName = str_replace("/", "|", $name);
+        $normalizedName = str_replace(",", "|", $normalizedName);
+
+        return $normalizedName;
     }
 
     protected function getGroupElements(GroupTreeElement $gte)

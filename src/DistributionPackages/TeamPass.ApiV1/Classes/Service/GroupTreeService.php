@@ -69,6 +69,8 @@ class GroupTreeService extends AbstractService
      */
     protected $translatorService;
 
+    const MIGRATION_BASE_PATH = "Migration";
+
     /**
      * creates a new node
      *
@@ -150,6 +152,7 @@ class GroupTreeService extends AbstractService
     protected function getParentsName(GroupTreeElement $group, $result=[])
     {
         if (is_null($group->getParent())) {
+            $result[] = self::MIGRATION_BASE_PATH;
             return array_reverse($result);
         }
 

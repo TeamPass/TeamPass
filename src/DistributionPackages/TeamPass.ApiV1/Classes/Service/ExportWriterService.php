@@ -46,12 +46,14 @@ class ExportWriterService extends AbstractService
      * @var array
      */
     const DEFAULT_HEADER = [
+        "collections",
+        "type",
         "name",
-        "comment",
-        "username",
-        "password",
-        "url",
-        "rte"
+        "notes",
+        "login_uri",
+        "login_username",
+        "login_password",
+        "login_totp"
     ];
 
     /**
@@ -89,6 +91,7 @@ class ExportWriterService extends AbstractService
         foreach ($data as $row) {
             if (is_array($row['elements'])) {
                 foreach($row['elements'] as $element) {
+                    $type="note";
                     if (!isset($element['name'])) {
                         $element['name'] = "";
                     }
@@ -104,17 +107,34 @@ class ExportWriterService extends AbstractService
                     if (!isset($element['content']['title'])) {
                         $element['content']['title'] = "";
                     }
-                    if (!isset($element['content']['rteContent'])) {
-                        $element['content']['rteContent'] = "";
+                    if (!isset($element['content']['rtecontent'])) {
+                        $element['content']['rtecontent'] = "";
+                        $type="login";
+                    }
+
+                    $element['content']['rtecontent'] = strip_tags($element['content']['rtecontent']);
+                    $element['content']['rtecontent']  = str_replace("\n" , '', $element['content']['rtecontent'] );
+
+                    if (strlen($element['content']['rtecontent']) > 6000) {
+                        continue;
                     }
 
                     $tmp = [];
-                    $tmp["name"] = implode($row['path'], "/") . $element["name"];
-                    $tmp["comment"] =$element['comment'];
-                    $tmp["username"] =$element['content']['username'];
-                    $tmp["password"] =$element['content']['password'];
-                    $tmp["url"] =$element['content']['url'];
-                    $tmp["rte"] = $element['content']['rteContent'];
+                    $tmp["collections"] = implode($row['path'], "/");
+                    $tmp["type"] = $type;
+                    $tmp["name"] = $element["name"];
+
+                    if ($type === "login") {
+                        $tmp["notes"] =$element['comment'];
+                    } else {
+                        $tmp["notes"] = $element['content']['rtecontent'];
+                    }
+
+                    $tmp["login_uri"] = $element['content']['url'];
+                    $tmp["login_username"] =$element['content']['username'];
+                    $tmp["login_password"] =$element['content']['password'];
+                    $tmp["login_totp"] = "";
+
 
                     $processedData[] = $tmp;
                 }
@@ -128,7 +148,7 @@ class ExportWriterService extends AbstractService
         $this->writeHeader($handler);
 
         foreach ($processedData as $row) {
-            fputcsv($handler, $row, self::SEPARATOR, self::ENCLOSURE);
+                fputcsv($handler, $row, self::SEPARATOR, self::ENCLOSURE);
         }
     }
 
